@@ -23,15 +23,16 @@ public class Player : MonoBehaviour
     void Start()
     {
         originalSpeed = speed;
-        UpdateHealthText();
-        UpdateSpeedText();
-        UpdateStrengthText();
+        
 
     }
 
     void Update()
     {
+        UpdateHealthText();
+        UpdateStrengthText();
         UpdateSpeedBoostTimer();
+        UpdateSpeedText();
     }
 
     void UpdateSpeedBoostTimer()
@@ -73,8 +74,12 @@ public class Player : MonoBehaviour
             speedBoostTimer = 0.0f;
             UpdateSpeedText();
             Debug.Log($"Speed boosted by {speedMultiplier * 100}% for {duration} seconds.");
+            
+            
         }
     }
+
+    
 
     void UpdateHealthText()
     {
